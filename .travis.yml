@@ -6,6 +6,8 @@ before_script:
   - sudo cp ffmpeg-2.1.3-64bit-static/ffmpeg ffmpeg-2.1.3-64bit-static/ffprobe /usr/bin
   - ffmpeg -version
 language: node_js
+after_script:
+  - make coveralls
 node_js:
   - "0.8"
   - "0.10"

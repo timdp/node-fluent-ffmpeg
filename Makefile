@@ -14,6 +14,9 @@ lib-cov:
 	@rm -fr ./$@
 	@jscoverage lib $@
 
+coveralls:
+	@NODE_ENV=test $(MOCHA) --require should --reporter mocha-lcov-reporter --colors | ./node_modules/coveralls/bin/coveralls.js
+
 publish: 
 	@npm version patch -m "version bump"
 	@npm publish
